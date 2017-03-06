@@ -9,7 +9,7 @@
             <div class="title ">
                 About {{ $contact_data['fullname'] }}
             </div>
-            <p>This is just a demo created with Laravel, you brainless fuck</p>
+            <p>This is just a demo created with Laravel</p>
             <p>{{ $contact_data['email']  }}</p>
         </div>
     </div>
