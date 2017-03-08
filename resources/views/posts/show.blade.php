@@ -13,14 +13,18 @@
         <div class="col-lg-4 col-md-4 col-sm-6 col-xs-8 col-lg-offset-0 col-md-offset-0 col-sm-offset-3 col-xs-offset-2">
             <div class="well btn-h1-spacing">
 
-                <p class="info-label">URL:</p>
-                <a class="info-content" href="{{ route('blog.single', $post->slug) }}">{{ route('blog.single', $post->slug) }}</a><p></p>
+
+                <p class="info-label">Category:</p>
+                <p class="info-content">{{ $post->category->name }}</p>
 
                 <p class="info-label">Created at:</p>
                 <p class="info-content">{{ date( 'j M, Y | G:i', strtotime($post->created_at) ) }}</p>
 
                 <p class="info-label">Last updated:</p>
                 <p class="info-content">{{ date( 'j M, Y | G:i', strtotime($post->updated_at) ) }}</p>
+
+                <p class="info-label">URL:</p>
+                <a class="info-content" href="{{ route('blog.single', $post->slug) }}">{{ route('blog.single', $post->slug) }}</a><p></p>
 
                 <div class="row">
                     <div class="col-lg-6 col-sm-6 col-md-6 col-xs-6">

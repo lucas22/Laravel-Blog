@@ -14,9 +14,14 @@
             <div class="row">
                 <input class="form-control" name="title" type="text" required placeholder="Post title" value="{{ old('title') }}">
                 <textarea class="form-control" name="body" required rows="8" placeholder="Post text">{{ old('body') }}</textarea>
+                <select class="form-control" name="category_id" title="Category">
+                    @foreach($categories as $category)
+                        <option value="{{ $category->id }}">{{ $category->name }}</option>
+                    @endforeach
+                </select>
                 <div>
-                    <p class="col-lg-2 col-md-3 col-sm-4 col-xs-6 text-right">site.com/blog/</p>
-                    <input class="col-lg-10 col-md-9 col-sm-8 col-xs-6" name="slug" type="text" required value="{{ old('slug') }}">
+                    <p class="col-lg-2 col-md-3 col-sm-4 col-xs-6 text-right">example.com/blog/</p>
+                    <input class="col-lg-10 col-md-9 col-sm-8 col-xs-6" title="identifier" name="slug" type="text" required value="{{ old('slug') }}">
                 </div>
             </div>
             <div class="row">

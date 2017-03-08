@@ -19,6 +19,7 @@
         <table class="table">
             <thead>
                 <th>#</th>
+                <th>Category</th>
                 <th>Title</th>
                 <th>Body</th>
                 <th>Created at</th>
@@ -29,8 +30,9 @@
             <tbody>
                 @foreach( $postsDisplayed as $post )
                     <tr>
-                        <th>{{$post->id}}</th>
-                        <td>{{$post->title}}</td>
+                        <th>{{ $post->id }}</th>
+                        <td>{{ $post->category->name }}</td>
+                        <td>{{ $post->title }}</td>
                         <td>{{substr($post->body, 0, 40)}}{{ strlen($post->body)>50 ? "..." : ""}}</td>
                         <td>{{date('j M, Y | G:i', strtotime($post->created_at))}}</td>
                         <td>

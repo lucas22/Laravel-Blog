@@ -10,10 +10,11 @@
             <h5 class="text-right">Last updated {{ date('j M, Y | G:i', strtotime($post->updated_at)) }}</h5>
             <hr>
             <p class="blog-text">{{ $post->body  }}</p>
+            <p style="margin-top: 3em">Category: {{ ($post->category != NULL) ? $post->category->name : "None" }}</p>
+
             <hr>
+            <a href="/" class="btn btn-primary text-uppercase">< Back</a>
         </div>
     </div>
-
-    <a href="/" class="btn btn-primary text-lowercase">< Back</a>
 
 @endsection

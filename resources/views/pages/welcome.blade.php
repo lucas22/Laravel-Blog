@@ -6,7 +6,7 @@
     <div class="row">
         <div>
             <h1>Welcome to Da Blog</h1>
-            <p class="lead">Thank you so much you bastard! I am really glad you're here.</p>
+            <p class="lead">Thank you for the visit! Start by writing something.</p>
             <p><a class="btn btn-primary btn-lg" href="{{ route('posts.create') }}" role="button">Create a post</a></p>
         </div>
     </div>
@@ -20,7 +20,7 @@
 
                 <div class="blog-post">
                     <a href="{{ route('blog.single', $post->slug) }}"><h3>{{ $post->title }}</h3></a>
-                    <p>{{ substr($post->body, 0, 300) }}{{ strlen($post->body) > 300 ? "..." : "" }}</p>
+                    <p class="blog-text-preview">{{ substr($post->body, 0, 300) }}{{ strlen($post->body) > 300 ? "..." : "" }}</p>
                     <hr>
                 </div>
 
@@ -29,7 +29,7 @@
         </div>
 
         <div class="sidebar col-lg-3 col-md-3 col-sm-3 col-xs-12 col-lg-offset-1 col-md-offset-1 col-sm-offset-1">
-            <h2>Sidebar</h2>
+            <h2>Useless sidebar</h2>
         </div>
 
     </div>
