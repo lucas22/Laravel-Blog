@@ -8,6 +8,12 @@
         <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
             <h1>{{ $post->title  }}</h1>
             <p class="blog-text">{{ $post->body  }}</p>
+            <hr>
+            <div class="tags">
+                @foreach($post->tags as $tag)
+                    <span class="label label-default">{{ $tag->name }}</span>
+                @endforeach
+            </div>
         </div>
 
         <div class="col-lg-4 col-md-4 col-sm-6 col-xs-8 col-lg-offset-0 col-md-offset-0 col-sm-offset-3 col-xs-offset-2">

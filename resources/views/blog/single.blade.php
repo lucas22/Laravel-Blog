@@ -11,6 +11,11 @@
             <hr>
             <p class="blog-text">{{ $post->body  }}</p>
             <p style="margin-top: 3em">Category: {{ ($post->category != NULL) ? $post->category->name : "None" }}</p>
+            <div class="tags">
+                @foreach($post->tags as $tag)
+                    <span class="label label-default">{{ $tag->name }}</span>
+                @endforeach
+            </div>
 
             <hr>
             <a href="/" class="btn btn-primary text-uppercase">< Back</a>
