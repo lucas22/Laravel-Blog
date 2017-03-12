@@ -14,7 +14,9 @@
 Route::get('/blog/{slug}', ['as' => 'blog.single', 'uses' => 'BlogController@getSingle'])->where('slug', '[\w\d\-\_]+');
 Route::get('/blog', ['uses' => 'BlogController@getIndex', 'as' => 'blog.index']);
 Route::get('/contact', 'PageController@getContact');
+Route::post('/contact', 'PageController@postContact');
 Route::get('/about', 'PageController@getAbout');
+Route::get('/settings', 'PageController@getSettings');
 Route::get('/', 'PageController@getIndex');
 
 // AUTHENTICATION ROUTES

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Post;
+use Illuminate\Support\Facades\Auth;
 
 class PageController extends Controller {
 
@@ -29,7 +30,11 @@ class PageController extends Controller {
     }
 
     public function postContact() {
+        return redirect()->route('home');
+    }
 
+    public function getSettings() {
+        return (Auth::check()) ? view('pages.settings') : view('auth.login');
     }
 
 }

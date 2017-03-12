@@ -70,3 +70,14 @@ body {
     text-align: justify;
     white-space: pre-wrap;
 }
+.switch {
+    margin-top: 0;
+    font-weight: normal;
+}
+.settings-section {
+    text-transform: uppercase;
+    font-weight: bold;
+}
+.form-row {
+    margin-top: 0.5em;
+}
