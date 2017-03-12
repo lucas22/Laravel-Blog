@@ -78,7 +78,6 @@ class TagController extends Controller
      */
     public function update(Request $request, $id)
     {
-        dd($request);
         $tag = Tag::find($id);
 
         $this->validate($request, ['name' => 'required | max:255']);
@@ -86,7 +85,7 @@ class TagController extends Controller
         $tag->name = $request->name;
         $tag->save();
 
-        $request->flash('Success', 'Successfully updated the tag.');
+        $request->session()->flash('success', 'Successfully updated the tag.');
 
         return redirect()->route('tags.show', $tag->id);
     }
