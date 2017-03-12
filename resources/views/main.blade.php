@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="{{ config('app.locale') }}">
 
     @include('partials.head')
     @yield('stylesheets')                       <!-- styles for each page -->

@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 use App\Post;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Mail;
 
 class PageController extends Controller {
 
@@ -29,8 +31,32 @@ class PageController extends Controller {
         return view('pages.contact');
     }
 
-    public function postContact() {
-        return redirect()->route('home');
+    public function postContact(Request $request) {
+
+        $this->validate($request, [
+            'name'      => 'required | max:255',
+            'email'     => 'required | email',
+            'subject'   => 'min:4',
+            'message'   => 'min:10'
+        ]);
+
+        $data = array(
+            'name'         => $request->name,
+            'email'         => $request->email,
+            'subject'       => $request->subject,
+            'bodyMessage'   => $request->message,
+            'survey'        => ['q1' => "hello", 'q2' => 'YES']
+        );
+
+        Mail::send('emails.contact', $data, function($message) use ($data) {
+            $message->from($data['email']);
+            $message->to('hello@nuka.com.br');
+            $message->subject("Blog contact | ".$data['subject']);
+        });
+
+        $request->session()->flash('success', 'Message sent, we\'ll reply soon!');
+
+        return redirect()->route('blog.index');
     }
 
     public function getSettings() {
