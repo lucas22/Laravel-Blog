@@ -136,8 +136,6 @@ class PostController extends Controller
         }
 
         $request->session()->flash('success', 'The blog post was successfully edited!');
-
-        // redirect to another page
         return redirect()->route('posts.show', $post->id);
     }
 
@@ -151,6 +149,7 @@ class PostController extends Controller
     public function destroy(Request $request, $id)
     {
         $post = Post::find($id);
+        $post->tags()->detach();
         $post->delete();
 
         $request->session()->flash('success','The post was deleted');

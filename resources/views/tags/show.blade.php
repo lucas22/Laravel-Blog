@@ -9,7 +9,12 @@
             <h1>{{ $tag->name }} <small>{{ $tag->posts()->count() }} Posts</small></h1>
         </div>
         <div class="col-md-4">
-            <a href="{{ route('tags.edit', $tag->id) }}" class="btn btn-primary pull-right btn-h1-spacing">Edit</a>
+            <form action="{{ route('tags.destroy', $tag->id) }}" method="POST">
+                {{ csrf_field() }}
+                {{ method_field('DELETE') }}
+                <a href="{{ route('tags.edit', $tag->id) }}" class="btn btn-primary pull-right btn-h1-spacing">Edit</a>
+                <input type="submit" class="btn btn-danger pull-right btn-h1-spacing" value="Delete">
+            </form>
         </div>
     </div>
 
@@ -18,7 +23,6 @@
             <table class="table">
                 <thead>
                 <tr>
-                    <th>#</th>
                     <th>Title</th>
                     <th>Tags</th>
                     <th></th>

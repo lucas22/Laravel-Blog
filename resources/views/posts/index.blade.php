@@ -19,26 +19,22 @@
         <table class="table">
             <thead>
                 <th>#</th>
-                <th>Category</th>
                 <th>Title</th>
                 <th>Body</th>
+                <th>Category</th>
                 <th>Created at</th>
-                <th></th>
                 <th></th>
             </thead>
 
             <tbody>
                 @foreach( $postsDisplayed as $post )
                     <tr>
-                        <th>{{ $post->id }}</th>
-                        <td>{{ $post->category->name }}</td>
                         <td>{{ $post->title }}</td>
-                        <td>{{substr($post->body, 0, 40)}}{{ strlen($post->body)>50 ? "..." : ""}}</td>
-                        <td>{{date('j M, Y | G:i', strtotime($post->created_at))}}</td>
+                        <td>{{substr($post->body, 0, 100)}}{{ strlen($post->body)>100 ? "..." : ""}}</td>
+                        <td>{{ $post->category->name }}</td>
+                        <td>{{date('d/m/y | G:i', strtotime($post->created_at))}}</td>
                         <td>
                             <a href="{{ route('posts.show', $post->id) }}" class="btn-sm center btn-block btn-default">View</a>
-                        </td>
-                        <td>
                             <a href="{{ route('posts.edit', $post->id) }}" class="btn-sm center btn-block btn-info">Edit</a>
                         </td>
                     </tr>
@@ -46,9 +42,6 @@
             </tbody>
         </table>
 
-        <div class="text-center">
-            {!! $postsDisplayed->links() !!}
-        </div>
     </div>
 
 @endsection
