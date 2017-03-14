@@ -81,3 +81,9 @@ body {
 .form-row {
     margin-top: 0.5em;
 }
+.comment p {
+    margin: 0;
+}
+.comment {
+    margin-bottom: 1em;
+}

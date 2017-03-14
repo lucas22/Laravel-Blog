@@ -28,6 +28,9 @@ Route::post('/auth/login', 'Auth\LoginController@login');
 Route::get('/auth/register', 'Auth\RegisterController@showRegistrationForm');
 Route::post('/auth/register', 'Auth\RegisterController@register');
 
+// COMMENTS
+Route::post('comments/{post_id}', ['uses' => 'CommentsController@store', 'as' => 'comments.store']);
+
 Route::resource('/categories', 'CategoryController', ['except' => ['create']]);
 Route::resource('/tags', 'TagController', ['except' => ['create']]);
 Route::resource('/posts', 'PostController');
