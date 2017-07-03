@@ -30,7 +30,7 @@
                     <div class="comment">
                         <div class="row">
                             <strong class="col-lg-6 col-md-6 col-sm-6 col-xs-6">{{ $comment->name }}</strong>
-                            <small style="font-family: sans-serif; text-align: right" class="col-lg-6 col-md-6 col-sm-6 col-xs-6 push-right">{{ date('h:m | d/m/y',strtotime($comment->created_at)) }}</small>
+                            <small style="font-family: sans-serif; text-align: right" class="col-lg-6 col-md-6 col-sm-6 col-xs-6 push-right">{{ date('H:i | d/m/y',strtotime($comment->created_at)) }}</small>
                         </div>
                         <p>{{ $comment->comment }}</p>
                     </div>
