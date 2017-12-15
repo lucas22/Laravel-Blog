@@ -1,13 +1,15 @@
-#[Laravel Blog](https://github.com/lucas22/Laravel-Blog)
-#####Simple blog system built with Laravel
+[Laravel Blog](https://github.com/lucaspar/Laravel-Blog)
+===
 
-##Features
-- Create, view, update, and delete blog entries;
-- User registration and authentication;
-- Blog tags (w/ CRUD)
-- Blog categories
+##### Simple blog system built with Laravel
 
-##Technologies
-- Laravel
-- MySQL DB
-- Blade
+## Features
+ - Create, view, update, and delete blog entries;
+ - User registration and authentication;
+ - Blog tags (w/ CRUD)
+ - Blog categories
+
+## Technologies
+ - Laravel
+ - MySQL DB
+ - Blade
